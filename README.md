@@ -2,7 +2,7 @@
 
 A wrapper around the ProPublica Congress API.
 
-## Quickstart
+## Getting started
 
 First, add `pro_publica` to your `mix.exs` dependencies:
 
@@ -25,6 +25,14 @@ Fetching dependencies and running on elixir console:
 ```elixir
 mix deps.get
 iex -S mix
+```
+
+## Running tests
+
+Get an API key from the maintainers (https://propublica.github.io/congress-api-docs). The run the tests with:
+
+```
+TOKEN=[token] mix test
 ```
 
 ## Contributing
