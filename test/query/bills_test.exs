@@ -18,9 +18,9 @@ defmodule ProPublica.Query.BillsTest do
       @client |> ProPublica.Query.Bills.show("s375", 115)
   end
 
-  test "#show_metadata bill s375 amendments" do
+  test "#metadata bill s375 amendments" do
     %{"results" => [%{"amendments" => _amendments}]} =
-      @client |> ProPublica.Query.Bills.show_metadata("s375", "amendments", 115)
+      @client |> ProPublica.Query.Bills.metadata("s375", "amendments", 115)
   end
 
   test "#cosponsors bill s375" do

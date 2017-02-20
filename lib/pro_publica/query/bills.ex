@@ -26,12 +26,12 @@ defmodule ProPublica.Query.Bills do
     client |> get("/#{congress}/bills/#{bill_id}.json")
   end
 
-  @spec show_metadata(Client.t, integer, binary, integer) :: ProPublica.response
-  def show_metadata(client, bill_id, metadata_type, congress \\ ProPublica.congress)
-  def show_metadata(client, bill_id, metadata_type, congress) when metadata_type in @metadata_types do
+  @spec metadata(Client.t, integer, binary, integer) :: ProPublica.response
+  def metadata(client, bill_id, metadata_type, congress \\ ProPublica.congress)
+  def metadata(client, bill_id, metadata_type, congress) when metadata_type in @metadata_types do
     client |> get("/#{congress}/bills/#{bill_id}/#{metadata_type}.json")
   end
-  def show_metadata(_, _, _, _) do
+  def metadata(_, _, _, _) do
     raise ArgumentError, message: "metadata_type must be one of subjects, amendments, or related"
   end
 

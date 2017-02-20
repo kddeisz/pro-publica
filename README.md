@@ -1,6 +1,8 @@
 # ProPublica Congress API
 
-A wrapper around the ProPublica Congress API.
+[![Build Status](https://travis-ci.org/kddeisz/pro-publica.svg?branch=master)](https://travis-ci.org/kddeisz/pro-publica)
+
+An elixir wrapper around the ProPublica Congress API.
 
 ## Getting started
 
@@ -29,10 +31,10 @@ iex -S mix
 
 ## Running tests
 
-Get an API key from the maintainers (https://propublica.github.io/congress-api-docs). The run the tests with:
+Get an API key from the maintainers (https://propublica.github.io/congress-api-docs) and put it into a file called `.token`. The run the tests with:
 
 ```
-TOKEN=[token] mix test
+mix test
 ```
 
 ## Contributing
