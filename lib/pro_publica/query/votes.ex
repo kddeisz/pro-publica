@@ -1,12 +1,12 @@
 defmodule ProPublica.Query.Votes do
   import ProPublica
 
-  @spec show(Client.t, binary, integer, integer, integer) :: ProPublica.response
-  def show(client, chamber, session, number, congress \\ ProPublica.congress)
-  def show(client, chamber, session, number, congress) when chamber in ["house", "senate"] and session in [1, 2] do
+  @spec roll_call(Client.t, binary, integer, integer, integer) :: ProPublica.response
+  def roll_call(client, chamber, session, number, congress \\ ProPublica.congress)
+  def roll_call(client, chamber, session, number, congress) when chamber in ["house", "senate"] and session in [1, 2] do
     client |> get("/#{congress}/#{chamber}/sessions/#{session}/votes/#{number}.json")
   end
-  def show(_, _, _, _, _) do
+  def roll_call(_, _, _, _, _) do
     raise ArgumentError, message: "chamber must be either house or senate and session must be either 1 or 2"
   end
 
