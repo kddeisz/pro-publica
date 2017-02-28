@@ -3,6 +3,11 @@ defmodule ProPublica.Query.Nominations do
 
   @nominee_types ["received", "updated", "confirmed", "withdrawn"]
 
+  @spec list(Client.t, integer) :: ProPublica.response
+  def list(client, congress \\ ProPublica.congress) do
+    client |> get("/#{congress}/nominations.json")
+  end
+
   @spec nominees(Client.t, binary, integer) :: ProPublica.response
   def nominees(client, nominee_type, congress \\ ProPublica.congress)
   def nominees(client, nominee_type, congress) when nominee_type in @nominee_types do

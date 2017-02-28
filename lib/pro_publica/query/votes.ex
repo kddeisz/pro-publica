@@ -26,9 +26,4 @@ defmodule ProPublica.Query.Votes do
   def by_month(_, _, _, _) do
     raise ArgumentError, message: "chamber must be either house or senate"
   end
-
-  @spec senate_nominations(Client.t, integer) :: ProPublica.response
-  def senate_nominations(client, congress \\ ProPublica.congress) do
-    client |> get("/#{congress}/nominations.json")
-  end
 end
